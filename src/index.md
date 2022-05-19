@@ -14,8 +14,8 @@ Feel free to reach out if you have any questions or just want to say hello.
 
 <div class="social">
 {% social 'mail', mailto %}
-{% social 'github', 'https://www.github.com/ritamsarmah' %}
-{% social 'linkedin', 'https://www.linkedin.com/in/rsarmah/' %}
+{% social 'github', "'https://www.github.com/ritamsarmah'" %}
+{% social 'linkedin', "'https://www.linkedin.com/in/rsarmah/'" %}
 </div>
 
 ## Projects
