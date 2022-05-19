@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>{{ title }}</title>
+
+        <!-- prettier-ignore -->
+        {% favicons 'src/favicon.svg', appleIconBgColor='rgba(0, 0, 0, 0.0)' %}
+
+        <!-- prettier-ignore -->
+        {% font fonts %}
+
+        <!-- prettier-ignore -->
+        {% set css %}
+            {% include "base.css" %}
+            {% include "style.css" %}
+        {% endset %}
+
+        <style>
+            {{ css | cssmin | safe }}
+        </style>
+    </head>
+
+    <body>
+        {{ content | safe }}
+    </body>
+</html>

@@ -1,0 +1,25 @@
+#container-wrap {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 5rem; /* Footer height */
+}
+
+.creator {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1rem; /* Distance from bottom */
+    text-align: center;
+}
+
+.creator a {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+.creator a:hover {
+    text-decoration: underline;
+}

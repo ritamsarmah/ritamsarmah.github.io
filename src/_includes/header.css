@@ -1,0 +1,101 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.logo img {
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+/* Navbar Menu */
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    text-align: center;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.menu li:hover {
+    color: var(--theme-color);
+}
+
+/* Responsive Navbar Menu */
+
+/* Checkbox Hack */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Hamburger Menu */
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: var(--background-color);
+        right: 0;
+        left: 0;
+        padding: 1.5rem 0.25rem;
+        margin-top: 0.5rem;
+        border-top: dashed 1px;
+        height: 100%;
+    }
+
+    .menu li {
+        text-align: right;
+    }
+
+    .menu li + li {
+        margin-top: 1.5rem;
+    }
+
+    input[type="checkbox"]:checked ~ .menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

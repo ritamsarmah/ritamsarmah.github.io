@@ -1,0 +1,15 @@
+:root {
+    --theme-color: #1eaff0;
+    --text-color: white;
+    --background-color: #06070b;
+    --body-font: "Open Sans";
+}
+
+body {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+img[alt="screenshot"] {
+    margin-bottom: 1rem auto;
+}

@@ -1,0 +1,11 @@
+tag: CineSearch
+index: /projects/cinesearch
+layout: project.njk
+fonts:
+  Open Sans: [400, 700]
+pages:
+  - name: Overview
+    slug: /projects/cinesearch/
+  - name: Privacy
+    slug: /projects/cinesearch/privacy
+

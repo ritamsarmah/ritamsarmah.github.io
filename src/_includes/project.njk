@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>{{ title | safe }} - {{ tag | safe }}</title>
+
+        <!-- prettier-ignore -->
+        {% favicons 'src/favicon.svg', appleIconBgColor='rgba(0, 0, 0, 0.0)' %}
+
+        <!-- prettier-ignore -->
+        {% if fonts %}
+        {% font fonts %}
+        {% endif %}
+
+        <!-- prettier-ignore -->
+
+        <!-- prettier-ignore -->
+        {% set css %}
+        {% include "base.css" %}
+        {% include "header.css" %}
+        {% include "footer.css" %}
+        {% include "../projects/" + tag.toLowerCase() + "/style.css" %}
+        {% endset %}
+
+        <style>
+            {{ css | cssmin | safe }}
+        </style>
+
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+
+    <body>
+        <div id="container-wrap">
+            <div id="content-wrap">
+                {% include 'header.njk' %}
+                {{ content | safe }}
+            </div>
+            {% include 'footer.njk' %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+tag: Accelerate
+index: /projects/accelerate
+layout: project.njk
+fonts:
+    "Mulish": [200, 400, 700]
+pages:
+  - name: Overview
+    slug: /projects/accelerate/
+  - name: FAQ
+    slug: /projects/accelerate/faq
+  - name: Privacy
+    slug: /projects/accelerate/privacy

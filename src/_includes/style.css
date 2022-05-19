@@ -1,0 +1,72 @@
+:root {
+    --theme-color: dodgerblue;
+    --text-color: black;
+    --background-color: white;
+    --body-font: Nunito Sans;
+    --heading-font: Raleway;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.social {
+    max-width: 300px;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.social-btn {
+    all: unset;
+    padding: 5px 0;
+    margin-right: 2rem;
+    color: black;
+}
+
+.social-btn img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.social-btn img:hover {
+    /* https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: saturate(100%) invert(59%) sepia(55%) saturate(6022%)
+        hue-rotate(191deg) brightness(99%) contrast(105%);
+    cursor: pointer;
+}
+
+.project p {
+    margin-top: 0.6rem;
+    margin-bottom: 0.25rem;
+}
+
+.project a {
+    margin-right: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-color: #88c0d0;
+        --text-color: #d8dee9;
+        --background-color: #202124;
+    }
+
+    .social-btn img {
+        filter: invert(1);
+    }
+
+    .social-btn img:hover {
+        /* We prepend invert(0) to get original color */
+        filter: invert(0) invert(87%) sepia(11%) saturate(674%)
+            hue-rotate(130deg) brightness(81%) contrast(89%);
+    }
+}
