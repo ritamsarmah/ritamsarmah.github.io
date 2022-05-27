@@ -4,12 +4,11 @@
     "description": "My personal website.",
     "main": "index.js",
     "scripts": {
-        "start": "run-p dev:*",
+        "start": "eleventy --serve --watch",
         "clean": "del public",
         "build": "run-s clean build:*",
         "build:css": "ELEVENTY_ENV=production eleventy",
-        "build:11ty": "ELEVENTY_ENV=production eleventy",
-        "dev:11ty": "eleventy --serve --watch"
+        "build:11ty": "ELEVENTY_ENV=production eleventy"
     },
     "author": "Ritam Sarmah <hello@ritam.me>",
     "license": "ISC",
