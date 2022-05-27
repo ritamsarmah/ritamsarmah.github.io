@@ -60,7 +60,8 @@ Accelerate works on any website using HTML5 video, which includes most modern si
 
 {% collapse "Why isn't Accelerate working for me?" %}
 
-Check that the extension is enabled by opening the Settings app and going to **Safari > Extensions > Accelerate**. Make sure the switch next to "Accelerate" is toggled on and you've granted Accelerate permission to run on your desired websites. If you want to enable Accelerate on all websites, make sure **All Websites** is set to **Allow**.
+1. Check that the extension is enabled by opening the Settings app and going to **Safari > Extensions > Accelerate**. Make sure the switch next to "Accelerate" is toggled on and you've granted Accelerate permission to run on your desired websites. If you want to enable Accelerate on all websites, make sure **All Websites** is set to **Allow**.
+2. If you have other extensions installed, check that they aren't interfering with Accelerate by disabling them, restarting Safari, and testing if Accelerate works. 
 
 {% endcollapse %}
 
