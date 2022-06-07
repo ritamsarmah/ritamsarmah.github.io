@@ -24,7 +24,7 @@ Feel free to reach out if you have any questions or just want to say hello.
 
 ### Accelerate
 
-A fully customizable Safari extension for controlling video speed and playback.
+A powerful and customizable Safari extension for controlling video playback.
 
 [Website](/projects/accelerate)
 [App Store](https://apps.apple.com/app/accelerate-for-safari/id1459809092)
@@ -35,7 +35,7 @@ A fully customizable Safari extension for controlling video speed and playback.
 
 ### CineSearch
 
-Discover and search for the latest movies on iOS.
+Discover and search for movies on iOS.
 
 [Website](/projects/cinesearch)
 [App Store](https://apps.apple.com/tt/app/cinesearch/id1300312387)
