@@ -77,6 +77,12 @@ After you make changes to any of Accelerate's preferences, refresh any currently
 
 {% endcollapse %}
 
+{% collapse "Why isn't my updated textfield preference being saved?" %}
+
+After you change a textfield in Accelerate's preferences, such as the "Default Speed" or a shortcut's associated value, you'll need to press Enter/Return on your keyboard to confirm your value. Make sure you also click "Save" after you finish editing a shortcut.
+
+{% endcollapse %}
+
 {% collapse "Why doesn't right-click work on Netflix (or some other site)?" %}
 
 Netflix and certain other sites will block users from accessing the right-click menu. There are some Safari extensions that can prevent sites from doing this, but otherwise you'll have to use the keyboard shortcuts or toolbar item for controls.

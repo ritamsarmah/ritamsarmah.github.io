@@ -4,7 +4,7 @@
 
 Enable the Safari extension by opening the Settings app and going to **Safari > Extensions > Accelerate**. Toggle the switch next to "Accelerate" on.
 
-Accelerate allows you to control video playback in Safari on iOS 15. You can trigger playback controls using a popup menu or keyboard shortcuts. The popup is accessible by tapping Accelerate's icon in the Safari toolbar.
+Accelerate allows you to control video playback in Safari on iOS 15+. You can trigger playback controls using a popup menu or keyboard shortcuts. The popup is accessible by tapping Accelerate's icon in the Safari toolbar.
 
 The following playback controls are currently supported (with the default shortcuts noted in parentheses):
 
@@ -68,6 +68,12 @@ Accelerate works on any website using HTML5 video, which includes most modern si
 {% collapse "Why aren't my updated shortcuts or preferences working?" %}
 
 After you make changes to any of Accelerate's preferences, refresh any currently open websites to see the updates. If the changes still aren't showing, try restarting Safari.
+
+{% endcollapse %}
+
+{% collapse "Why isn't my updated textfield preference being saved?" %}
+
+After you change a textfield in Accelerate's preferences, such as the "Default Speed" or a shortcut's associated value, you'll need to tap Done/Return on your keyboard to confirm your value. Make sure you also tap "Save" after you finish editing a shortcut.
 
 {% endcollapse %}
 
