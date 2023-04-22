@@ -17,6 +17,12 @@ Accelerate allows you to control video playback primarily using keyboard shortcu
 
 {% endcollapse %}
 
+{% collapse "How do I access Accelerate's preferences?" %}
+
+You can access the preferences by opening the Accelerate app installed into your Applications folder (e.g., from Finder).
+
+{% endcollapse %}
+
 {% collapse "How do I customize my shortcuts?" %}
 
 You can customize your shortcuts in the **Shortcuts** tab of Accelerate's preferences.
