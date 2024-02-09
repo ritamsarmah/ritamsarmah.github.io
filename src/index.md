@@ -28,6 +28,7 @@ A powerful and customizable Safari extension for controlling video playback.
 
 [Website](/projects/accelerate)
 [App Store](https://apps.apple.com/app/accelerate-for-safari/id1459809092)
+[GitHub](https://github.com/ritamsarmah/accelerate)
 
 </div>
 

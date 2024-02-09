@@ -13,7 +13,8 @@ Accelerate allows you to control video playback primarily using keyboard shortcu
 - Skip Backward
 - Skip to End
 - Toggle Mute
-- Picture in Picture (**P**)
+- Toggle Picture in Picture (**P**)
+- Toggle Fullscreen
 
 {% endcollapse %}
 
@@ -121,6 +122,6 @@ You can add a website to Accelerate's blocklist to prevent the extension from ru
 
 {% collapse "What if I have a different issue or feedback?" %}
 
-Feel free to send me any other questions, comments, feedback, or bug reports via email.
+Please share bug reports or feature requests [on GitHub](https://github.com/ritamsarmah/accelerate/issues). Feel free to send me any other questions or feedback via email.
 
 {% endcollapse %}

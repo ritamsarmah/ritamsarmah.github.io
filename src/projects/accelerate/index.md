@@ -6,12 +6,14 @@ title: Home
 
 # Video playback controls for Safari
 
-Accelerate is a Safari extension for macOS and iOS with powerful, customizable features for controlling video playback.
+## Accelerate is a Safari extension for macOS and iOS with powerful, customizable features for controlling video playback.
 
 ![screenshot](../../images/accelerate/screenshot.png)
 
 [![Download on Mac App Store](../../images/macappstore_black.svg)](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=12)
 [![Download on App Store](../../images/appstore_black.svg)](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8)
+
+Free and [open source](https://github.com/ritamsarmah/accelerate). Supports macOS 10.13+ and iOS 15+
 
 </div>
 
