@@ -1,3 +1,16 @@
-package.json
-package-lock.json
-public
+# Markdown
+**/*.md
+**/*.mdx
+
+# Images 
+src/assets
+public/
+
+# Generated
+dist/
+
+# Config
+.gitignore
+.prettierignore
+.github/
+**/*.sh

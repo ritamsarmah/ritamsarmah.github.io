@@ -1,21 +1,24 @@
-# Generated files
-package/generated*
+# build output
+dist/
 
-# Ignore installed npm modules
+# generated types
+.astro/
+
+# dependencies
 node_modules/
 
-# Ignore build tool output, e.g. code coverage
-.nyc_output/
-coverage/
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Ignore API documentation
-api-docs/
+# environment variables
+.env
+.env.production
 
-# Ignore eleventy output when doing manual tests
-public/
+# macOS-specific files
+.DS_Store
 
-package-lock.json
-
-# Ignore test files
-.cache
-test/stubs-layout-cache/_includes/*.js
+# jetbrains setting folder
+.idea/

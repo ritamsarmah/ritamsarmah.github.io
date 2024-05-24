@@ -1,0 +1,140 @@
+---
+// Supports weights 200-900
+import "@fontsource-variable/mulish";
+
+import Navigation from "/src/components/Navigation.astro";
+import Footer from "/src/components/Footer.astro";
+
+import icon from "/src/assets/accelerate/icon.png";
+
+interface Props {
+    title: string;
+}
+
+const title = Astro.props.frontmatter?.title ?? Astro.props.title;
+const project = "Accelerate";
+const links = [
+    {
+        text: "Home",
+        href: "/projects/accelerate",
+    },
+    {
+        text: "FAQ",
+        href: "/projects/accelerate/faq",
+    },
+    {
+        text: "Privacy",
+        href: "/projects/accelerate/privacy",
+    },
+];
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={`${title} - ${project}`} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{`${title} - ${project}`}</title>
+    </head>
+    <body
+        class="flex flex-col gap-12 min-h-screen w-full max-w-3xl px-8 mx-auto my-8"
+    >
+        <Navigation name={project} icon={icon} links={links} />
+        <main class="flex-grow">
+            <slot />
+        </main>
+        <Footer class="text-zinc-400 mt-8" />
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --accent: #7252df;
+    }
+
+    body {
+        font-family: "Mulish Variable", sans-serif;
+    }
+
+    /* General */
+    p {
+        font-weight: 300;
+    }
+
+    article p:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+
+    main a {
+        color: var(--accent);
+    }
+
+    main a:hover {
+        text-decoration: underline;
+    }
+
+    main strong {
+        font-weight: 600;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 2.25rem; /* 36px */
+        line-height: 2.5rem; /* 40px */
+        text-align: center;
+    }
+
+    article header {
+        margin-bottom: 3rem;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 1.25rem; /* 20px */
+        line-height: 1.75rem; /* 28px */
+        margin: 1.5rem 0 1rem 0;
+        padding: 0;
+    }
+
+    /* Lists */
+
+    article ul,
+    ol {
+        margin-left: 2rem;
+        list-style-position: outside;
+    }
+
+    article ul:not(:last-child) ol:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    article ul {
+        list-style-type: disc;
+    }
+
+    article ul ul {
+        list-style-type: circle;
+    }
+
+    article ul ul ul {
+        list-style-type: square;
+    }
+
+    article ol {
+        list-style-type: decimal;
+    }
+
+    article li::before {
+        content: "";
+        width: 0.25rem;
+        display: inline-block;
+    }
+
+    article li {
+        margin-bottom: 0.2rem;
+        font-weight: 300;
+    }
+</style>
