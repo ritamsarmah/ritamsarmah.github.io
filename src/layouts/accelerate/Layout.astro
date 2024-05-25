@@ -2,12 +2,17 @@
 // Supports weights 200-900
 import "@fontsource-variable/mulish";
 
-import Navigation from "/src/components/Navigation.astro";
-import Footer from "/src/components/Footer.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
 
-import icon from "/src/assets/accelerate/icon.png";
+import icon from "../../assets/accelerate/icon.png";
+
+type Frontmatter = {
+    title: string;
+};
 
 interface Props {
+    frontmatter?: Frontmatter;
     title: string;
 }
 

@@ -1,13 +1,14 @@
 ---
-import HomeLayout from "/src/layouts/HomeLayout.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
 
-import Email from "/src/components/Email.astro";
-import Link from "/src/components/Link.astro";
+import Email from "../components/Email.astro";
+import Anchor from "../components/Anchor.astro";
+import type { Link } from "../types";
 
 interface Project {
     title: string;
     description: string;
-    links: { text: string; href: string }[];
+    links: Link[];
 }
 
 const projects: Project[] = [
@@ -47,26 +48,26 @@ const projects: Project[] = [
             <h1 class="text-3xl font-semibold">Hello! I'm Ritam.</h1>
             <p>
                 I am a software engineer from California, currently working at
-                <Link text="AppLovin" href="https://www.applovin.com/" />. In my
-                spare time, I enjoy building useful apps for iOS and macOS. I
+                <Anchor text="AppLovin" href="https://www.applovin.com/" />. In
+                my spare time, I enjoy building useful apps for iOS and macOS. I
                 graduated from UCLA, where I studied computer science and
                 pursued research in
-                <Link
+                <Anchor
                     text="human-computer interaction"
                     href="https://hci.ucla.edu/"
                 />.
             </p>
             <p>
-                Feel free to reach out if you have any questions or just
-                want to say hello.
+                Feel free to reach out if you have any questions or just want to
+                say hello.
             </p>
 
             <div class="flex gap-5">
                 <Email>
-                    <Link text="Email" href="javascript:mail();" />
+                    <Anchor text="Email" href="javascript:mail();" />
                 </Email>
-                <Link text="GitHub" href="https://github.com/ritamsarmah" />
-                <Link
+                <Anchor text="GitHub" href="https://github.com/ritamsarmah" />
+                <Anchor
                     text="LinkedIn"
                     href="https://www.linkedin.com/in/rsarmah/"
                 />
@@ -82,7 +83,7 @@ const projects: Project[] = [
                         <p>{project.description}</p>
                         <div class="flex gap-5">
                             {project.links.map(link => (
-                                <Link {...link} />
+                                <Anchor {...link} />
                             ))}
                         </div>
                     </div>

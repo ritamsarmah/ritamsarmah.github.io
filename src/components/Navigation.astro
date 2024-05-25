@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
-import Email from "/src/components/Email.astro";
+import Email from "../components/Email.astro";
+import type { Link } from "../types";
+
+interface Props {
+    name: string;
+    icon: ImageMetadata;
+    links: Link[];
+}
 
 // Get the href for the home page
 const { name, icon, links } = Astro.props;
@@ -13,7 +20,12 @@ const { name, icon, links } = Astro.props;
             href={links[0].href}
             class="flex items-center space-x-3 rtl:space-x-reverse"
         >
-            <Image class="w-6 h-6" src={icon} alt="Go to homepage" loading="eager" />
+            <Image
+                class="w-6 h-6"
+                src={icon}
+                alt="Go to homepage"
+                loading="eager"
+            />
             <span class="self-center font-semibold whitespace-nowrap"
                 >{name}</span
             >
@@ -71,7 +83,7 @@ const { name, icon, links } = Astro.props;
     </div>
 </nav>
 
-<script>
+<script is:inline>
     document
         .getElementById("navbar-toggle")
         .addEventListener("click", function () {

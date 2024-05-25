@@ -1,16 +1,10 @@
----
-import Link from "../components/Link.astro";
-import { mail } from "/src/utils";
-
-const { text } = Astro.props;
----
-
 <span class="group">
     <slot />
     <span class="rs opacity-0 group:hover:opacity-100"></span>
 </span>
 
 <script is:inline>
+    // @ts-nocheck
     function mail() {
         const x = atob("bWFpbHRv");
         const y = atob("aGVsbG9Acml0YW0ubWU=");

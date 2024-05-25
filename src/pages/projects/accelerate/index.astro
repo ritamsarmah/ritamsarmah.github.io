@@ -1,11 +1,10 @@
 ---
-import Layout from "/src/layouts/accelerate/Layout.astro";
+import Layout from "../../../layouts/accelerate/Layout.astro";
 
 import { Image } from "astro:assets";
-import icon from "/src/assets/accelerate/icon.png";
-import screenshot from "/src/assets/accelerate/screenshot.png";
-import appStore from "/src/assets/appstore_black.svg";
-import macAppStore from "/src/assets/macappstore_black.svg";
+import screenshot from "../../../assets/accelerate/screenshot.png";
+import appStore from "../../../assets/appstore_black.svg";
+import macAppStore from "../../../assets/macappstore_black.svg";
 
 const notes = [
     {
@@ -44,12 +43,20 @@ const notes = [
             <a
                 href="https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=12"
             >
-                <Image src={macAppStore} alt="Download on the Mac App Store" loading="eager" />
+                <Image
+                    src={macAppStore}
+                    alt="Download on the Mac App Store"
+                    loading="eager"
+                />
             </a>
             <a
                 href="https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8"
             >
-                <Image src={appStore} alt="Download on the App Store" loading="eager" />
+                <Image
+                    src={appStore}
+                    alt="Download on the App Store"
+                    loading="eager"
+                />
             </a>
         </div>
         <div class="text-zinc-400">

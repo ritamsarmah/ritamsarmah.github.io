@@ -1,8 +1,7 @@
 ---
-interface Props {
-    text: string;
-    href: string;
-}
+import type { Link } from "../types";
+
+interface Props extends Link {}
 
 const { text, href } = Astro.props;
 ---
