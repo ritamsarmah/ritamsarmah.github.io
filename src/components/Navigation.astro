@@ -54,9 +54,10 @@ const { name, icon, links } = Astro.props;
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
             </svg>
         </button>
+        <!-- Mobile ToC -->
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
-                class="flex flex-col border-t border-zinc-400 p-2 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+                class="flex flex-col border-t border-zinc-400 p-2 mt-2 md:flex-row md:space-x-8 md:mt-0 md:border-0"
             >
                 {
                     links.map(link => (
