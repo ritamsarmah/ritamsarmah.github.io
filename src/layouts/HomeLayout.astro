@@ -2,23 +2,12 @@
 // Supports weights 100-900
 import "@fontsource-variable/petrona";
 
-interface Props {
-    title: string;
-}
-
-const { title } = Astro.props;
+import Head from "../components/Head.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Ritam Sarmah" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
+    <Head site="Ritam Sarmah" description="Software engineer based in San Francisco." />
     <body class="text-zinc-900 dark:bg-zinc-900 dark:text-zinc-300">
         <slot />
     </body>
