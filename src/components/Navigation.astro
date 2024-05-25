@@ -18,7 +18,7 @@ const { name, icon, links } = Astro.props;
     <div class="flex flex-wrap items-center justify-between">
         <a
             href={links[0].href}
-            class="flex items-center space-x-3 rtl:space-x-reverse"
+            class="flex px-2 items-center space-x-3"
         >
             <Image
                 class="w-6 h-6"
@@ -34,7 +34,7 @@ const { name, icon, links } = Astro.props;
             id="navbar-toggle"
             data-collapse-toggle="navbar-default"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+            class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 md:hidden"
             aria-controls="navbar-default"
             aria-expanded="false"
         >
@@ -57,7 +57,7 @@ const { name, icon, links } = Astro.props;
         <!-- Mobile ToC -->
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
-                class="flex flex-col border-t border-zinc-400 p-2 mt-2 md:flex-row md:space-x-8 md:mt-0 md:border-0"
+                class="flex flex-col text-right border-t border-zinc-200 p-2 mt-2 md:flex-row md:space-x-8 md:mt-0 md:border-0"
             >
                 {
                     links.map(link => (
