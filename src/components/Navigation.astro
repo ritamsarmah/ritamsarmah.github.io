@@ -16,10 +16,7 @@ const { name, icon, links } = Astro.props;
 
 <nav>
     <div class="flex flex-wrap items-center justify-between">
-        <a
-            href={links[0].href}
-            class="flex items-center space-x-3"
-        >
+        <a href={links[0].href} class="flex items-center space-x-3">
             <Image
                 class="w-6 h-6"
                 src={icon}
@@ -42,8 +39,15 @@ const { name, icon, links } = Astro.props;
             <span class="sr-only">Open navigation</span>
             <svg
                 aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-                    <path fill-rule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="size-5"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
+                    clip-rule="evenodd"></path>
             </svg>
         </button>
 

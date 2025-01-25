@@ -2,8 +2,9 @@
 import HomeLayout from "../layouts/HomeLayout.astro";
 
 import Email from "../components/Email.astro";
-import Anchor from "../components/Anchor.astro";
 import type { Link } from "../types";
+
+import "../styles/index.css";
 
 interface Project {
     title: string;
@@ -30,8 +31,7 @@ const projects: Project[] = [
     },
     {
         title: "Inkarta",
-        description:
-            "A self-hostable, wireless e-ink picture frame system.",
+        description: "A self-hostable, wireless e-ink picture frame system.",
         links: [
             {
                 text: "GitHub",
@@ -58,15 +58,14 @@ const projects: Project[] = [
         <section class="flex flex-col gap-6">
             <h1 class="text-3xl font-semibold">Hello! I'm Ritam.</h1>
             <p>
-                I am a software engineer from California, currently working at
-                <Anchor text="AppLovin" href="https://www.applovin.com/" />. In
-                my spare time, I enjoy building useful apps and creative projects. I
-                graduated from UCLA, where I studied computer science and
-                pursued research in
-                <Anchor
-                    text="human-computer interaction"
-                    href="https://hci.ucla.edu/"
-                />.
+                I am a software engineer from California, currently working at <a
+                    href="https://www.applovin.com/">AppLovin</a
+                >. In my spare time, I enjoy building useful apps and creative
+                projects. I graduated from UCLA, where I studied computer
+                science and pursued research in <a
+                    class="default"
+                    href="https://hci.ucla.edu/">human-computer-interaction</a
+                >.
             </p>
             <p>
                 Feel free to reach out if you have any questions or just want to
@@ -75,13 +74,10 @@ const projects: Project[] = [
 
             <div class="flex gap-5">
                 <Email>
-                    <Anchor text="Email" href="javascript:mail();" />
+                    <a href="javascript:mail();">Email</a>
                 </Email>
-                <Anchor text="GitHub" href="https://github.com/ritamsarmah" />
-                <Anchor
-                    text="LinkedIn"
-                    href="https://www.linkedin.com/in/rsarmah/"
-                />
+                <a href="https://github.com/ritamsarmah">GitHub</a>
+                <a href="https://www.linkedin.com/in/rsarmah/">LinkedIn</a>
             </div>
         </section>
 
@@ -94,7 +90,7 @@ const projects: Project[] = [
                         <p>{project.description}</p>
                         <div class="flex gap-5">
                             {project.links.map(link => (
-                                <Anchor {...link} />
+                                <a href={link.href}>{link.text}</a>
                             ))}
                         </div>
                     </div>

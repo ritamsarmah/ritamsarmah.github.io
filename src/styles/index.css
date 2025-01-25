@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+a:hover {
+    text-decoration-style: solid;
+    color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    a:hover {
+        color: white;
+    }
+}

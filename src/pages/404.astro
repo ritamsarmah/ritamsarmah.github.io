@@ -1,12 +1,13 @@
 ---
 import HomeLayout from "../layouts/HomeLayout.astro";
-import Anchor from "../components/Anchor.astro";
+
+import "../styles/index.css";
 ---
 
 <HomeLayout title="Ritam Sarmah">
     <main class="w-full max-w-3xl px-8 mx-auto my-20 tracking-wide">
         <h1 class="text-3xl font-semibold mb-2">404</h1>
         <h2 class="text-xl mb-16">Page not found.</h2>
-        <Anchor text="Back to Home" href="/" />
+        <a href="/">Back to Home</a>
     </main>
 </HomeLayout>

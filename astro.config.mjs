@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,5 +9,8 @@ export default defineConfig({
         "/projects/accelerate/faq-mac": "/projects/accelerate/faq#mac",
         "/projects/accelerate/faq-ios": "/projects/accelerate/faq#ios",
     },
-    integrations: [mdx(), tailwind()],
+    integrations: [mdx()],
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });
