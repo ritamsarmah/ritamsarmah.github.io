@@ -9,6 +9,11 @@ export default defineConfig({
         "/projects/accelerate/faq-mac": "/projects/accelerate/faq#mac",
         "/projects/accelerate/faq-ios": "/projects/accelerate/faq#ios",
     },
+    markdown: {
+        shikiConfig: {
+            theme: "nord",
+        },
+    },
     integrations: [mdx()],
     vite: {
         plugins: [tailwindcss()],

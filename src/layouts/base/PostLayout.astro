@@ -1,0 +1,34 @@
+---
+import Layout from "./Layout.astro";
+import type { Frontmatter } from "../../types";
+import { stringifyDate } from "../../utils";
+
+interface Props {
+    frontmatter: Frontmatter;
+}
+
+const { title, description } = Astro.props.frontmatter;
+const date = stringifyDate(Astro.props.frontmatter.date);
+---
+
+<Layout page={title} description={description}>
+    <nav aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true"> &raquo; </span>
+        <a href="/posts">Posts</a>
+    </nav>
+    <article>
+        <h1 class="text-4xl font-semibold mb-3">{title}</h1>
+        <div class="text-zinc-500 mb-6">{date}</div>
+        <div>
+            <slot />
+        </div>
+    </article>
+</Layout>
+
+<style is:inline>
+    p + p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+</style>

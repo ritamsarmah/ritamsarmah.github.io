@@ -5,4 +5,12 @@ const accelerate = defineCollection({
     loader: glob({ pattern: "**/*.mdx", base: "./src/content/accelerate" }),
 });
 
-export const collections = { accelerate };
+const posts = defineCollection({
+    loader: glob({ pattern: "**/*.mdx", base: "./src/pages/posts" }),
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+    }),
+});
+
+export const collections = { accelerate, posts };

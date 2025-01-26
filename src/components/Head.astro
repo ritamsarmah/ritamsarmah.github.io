@@ -7,7 +7,7 @@ interface Props {
 
 const { site, page } = Astro.props;
 
-const title = page != null ? `${page} - ${site}` : site;
+const title = page != null ? `${page} | ${site}` : site;
 const description = Astro.props.description ?? title;
 ---
 

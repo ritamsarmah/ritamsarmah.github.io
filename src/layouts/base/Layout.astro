@@ -1,24 +1,25 @@
 ---
 import Head from "../../components/Head.astro";
 
-// Supports weights 100-900
-import "@fontsource-variable/petrona";
+import "@fontsource-variable/petrona"; // weights 100-900
+import "@fontsource/ia-writer-mono"; // weights 400/700
 import "../../styles/base.css";
+
+const description = Astro.props.description ?? "Software engineer based in San Francisco."
 ---
 
 <!doctype html>
 <html lang="en">
     <Head
         site="Ritam Sarmah"
-        description="Software engineer based in San Francisco."
+        page={Astro.props.page}
+        description={description}
     />
     <body class="text-zinc-900 dark:bg-zinc-900 dark:text-zinc-300">
-        <slot />
+        <main
+            class="flex-grow flex flex-col gap-14 w-full max-w-3xl px-8 mx-auto my-20 tracking-wide"
+        >
+            <slot />
+        </main>
     </body>
 </html>
-
-<style>
-    body {
-        font-family: "Petrona Variable", serif;
-    }
-</style>

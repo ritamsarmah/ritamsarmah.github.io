@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* Fonts */
+
+body {
+    font-family: "Petrona Variable", serif;
+}
+
+code,
+pre,
+samp,
+kbd {
+    font-family: "iA Writer Mono", monospace;
+    font-size: 0.9rem;
+}
+
+ul {
+    list-style-type: disc; /* This sets the bullet type to a filled circle */
+    padding-left: 1.5rem; /* Adjust the left padding for the bullets */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Appearance */
+
 a {
     cursor: pointer;
     text-decoration: underline;
@@ -15,4 +38,11 @@ a:hover {
     a:hover {
         color: white;
     }
+}
+
+pre {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--color-zinc-800) !important;
 }

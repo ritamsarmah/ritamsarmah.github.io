@@ -2,13 +2,19 @@
 import Layout from "../layouts/base/Layout.astro";
 
 import Email from "../components/Email.astro";
+import Posts from "../components/Posts.astro";
 import type { Link } from "../types";
+import { stringifyDate } from "../utils";
 
 interface Project {
     title: string;
     description: string;
     links: Link[];
 }
+
+const posts = Object.values(
+    import.meta.glob("../pages/posts/*.mdx", { eager: true })
+);
 
 const projects: Project[] = [
     {
@@ -50,50 +56,51 @@ const projects: Project[] = [
 ---
 
 <Layout>
-    <main
-        class="flex-grow flex flex-col gap-14 w-full max-w-3xl px-8 mx-auto my-20 tracking-wide"
-    >
-        <section class="flex flex-col gap-6">
-            <h1 class="text-3xl font-semibold">Hello! I'm Ritam.</h1>
-            <p>
-                I am a software engineer from California, currently working at <a
-                    href="https://www.applovin.com/">AppLovin</a
-                >. In my spare time, I enjoy building useful apps and creative
-                projects. I graduated from UCLA, where I studied computer
-                science and pursued research in <a
-                    class="default"
-                    href="https://hci.ucla.edu/">human-computer-interaction</a
-                >.
-            </p>
-            <p>
-                Feel free to reach out if you have any questions or just want to
-                say hello.
-            </p>
+    <section class="flex flex-col gap-6">
+        <h1 class="text-3xl font-semibold">Hello! I'm Ritam.</h1>
+        <p>
+            I am a software engineer from California, currently working at <a
+                href="https://www.applovin.com/">AppLovin</a
+            >. In my spare time, I enjoy building useful apps and creative
+            projects. I graduated from UCLA, where I studied computer science
+            and pursued research in <a
+                class="default"
+                href="https://hci.ucla.edu/">human-computer-interaction</a
+            >.
+        </p>
+        <p>
+            Feel free to reach out if you have any questions or just want to say
+            hello.
+        </p>
 
-            <div class="flex gap-5">
-                <Email>
-                    <a href="javascript:mail();">Email</a>
-                </Email>
-                <a href="https://github.com/ritamsarmah">GitHub</a>
-                <a href="https://www.linkedin.com/in/rsarmah/">LinkedIn</a>
-            </div>
-        </section>
+        <div class="flex gap-5">
+            <Email>
+                <a href="javascript:mail();">Email</a>
+            </Email>
+            <a href="https://github.com/ritamsarmah">GitHub</a>
+            <a href="https://www.linkedin.com/in/rsarmah/">LinkedIn</a>
+        </div>
+    </section>
 
-        <section class="flex flex-col gap-8">
-            <h2 class="text-2xl font-bold">Projects</h2>
-            {
-                projects.map(project => (
-                    <div class="flex flex-col gap-2">
-                        <h3 class="text-xl font-semibold">{project.title}</h3>
-                        <p>{project.description}</p>
-                        <div class="flex gap-5">
-                            {project.links.map(link => (
-                                <a href={link.href}>{link.text}</a>
-                            ))}
-                        </div>
+    <section class="flex flex-col gap-8">
+        <h2 class="text-2xl font-bold">Projects</h2>
+        {
+            projects.map(project => (
+                <div class="flex flex-col gap-1.5">
+                    <h3 class="text-xl font-semibold">{project.title}</h3>
+                    <p>{project.description}</p>
+                    <div class="flex gap-5">
+                        {project.links.map(link => (
+                            <a href={link.href}>{link.text}</a>
+                        ))}
                     </div>
-                ))
-            }
-        </section>
-    </main>
+                </div>
+            ))
+        }
+    </section>
+
+    <section class="flex flex-col gap-8">
+        <h2 class="text-2xl font-bold">Posts</h2>
+        <Posts />
+    </section>
 </Layout>
