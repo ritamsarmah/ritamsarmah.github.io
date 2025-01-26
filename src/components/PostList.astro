@@ -1,8 +1,9 @@
 ---
 import { stringifyDate } from "../utils";
+import type { Post } from "../types";
 
 const posts = Object.values(
-    import.meta.glob("../pages/posts/*.mdx", { eager: true })
+    import.meta.glob<Post>("../pages/posts/*.mdx", { eager: true })
 );
 ---
 

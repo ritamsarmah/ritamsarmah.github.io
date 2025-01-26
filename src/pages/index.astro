@@ -2,19 +2,14 @@
 import Layout from "../layouts/base/Layout.astro";
 
 import Email from "../components/Email.astro";
-import Posts from "../components/Posts.astro";
+import PostList from "../components/PostList.astro";
 import type { Link } from "../types";
-import { stringifyDate } from "../utils";
 
 interface Project {
     title: string;
     description: string;
     links: Link[];
 }
-
-const posts = Object.values(
-    import.meta.glob("../pages/posts/*.mdx", { eager: true })
-);
 
 const projects: Project[] = [
     {
@@ -101,6 +96,6 @@ const projects: Project[] = [
 
     <section class="flex flex-col gap-8">
         <h2 class="text-2xl font-bold">Posts</h2>
-        <Posts />
+        <PostList />
     </section>
 </Layout>

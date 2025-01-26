@@ -8,3 +8,8 @@ export interface Frontmatter {
     description: string;
     date: string;
 }
+
+export interface Post {
+    frontmatter: Frontmatter;
+    url: string;
+}
