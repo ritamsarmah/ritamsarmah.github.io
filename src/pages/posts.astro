@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/base/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import PostList from "../components/PostList.astro";
 ---
 
 <Layout>
-    <nav aria-label="Breadcrumb">
+    <Breadcrumb>
         <a href="/">Home</a>
-    </nav>
+    </Breadcrumb>
     <div>
         <h1 class="text-3xl font-bold mb-5">Posts</h1>
         <PostList />

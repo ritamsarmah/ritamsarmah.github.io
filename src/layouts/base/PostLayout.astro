@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import type { Frontmatter } from "../../types";
 import { stringifyDate } from "../../utils";
 
@@ -12,11 +13,11 @@ const date = stringifyDate(Astro.props.frontmatter.date);
 ---
 
 <Layout page={title} description={description}>
-    <nav aria-label="Breadcrumb">
+    <Breadcrumb>
         <a href="/">Home</a>
         <span aria-hidden="true"> &raquo; </span>
         <a href="/posts">Posts</a>
-    </nav>
+    </Breadcrumb>
     <article>
         <h1 class="text-4xl font-semibold mb-3">{title}</h1>
         <div class="text-zinc-500 mb-6">{date}</div>

@@ -11,6 +11,11 @@ pre,
 samp,
 kbd {
     font-family: "iA Writer Mono", monospace;
+    font-size: 0.8rem;
+}
+
+kbd {
+    font-family: "iA Writer Mono", monospace;
     font-size: 0.9rem;
 }
 
