@@ -45,7 +45,26 @@ a:hover {
     }
 }
 
-pre {
+/* Articles */
+
+article h2 {
+    font-size: var(--text-2xl);
+}
+
+article h3 {
+    font-size: var(--text-xl);
+}
+
+article h2,
+article h3,
+article h4,
+article h5 {
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+article pre {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     padding: 1rem;
