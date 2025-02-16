@@ -7,11 +7,11 @@ date: 2025-02-16
 
 LLM-based chat interfaces like ChatGPT use **token streaming** to incrementally display generated text, rather than having users wait for the full response. This technique improves the user experience by reducing perceived latency, especially for lengthy outputs.[^1]
 
-Token streaming can be easily implemented in web applications using [htmx](https://htmx.org)--a library that enables dynamic, server-driven interfaces using HTML attributes--and its support for [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) (SSE). This article demonstrates the details using Python and Flask, though htmx is backend-agnostic and can be used with any tech stack.
+Token streaming can be easily implemented in server-driven web applications using [htmx](https://htmx.org), a library that enables dynamic interfaces using HTML attributes and [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) (SSE). This article demonstrates an example using Python and Flask, though htmx is backend-agnostic and can be used with any tech stack.
 
 ## Project setup
 
-We'll incorporate token streaming into a simple chat app. Start by following the [Flask documentation](https://flask.palletsprojects.com/en/stable/installation/) to set up a new project. Then, create routes for a static page and form handler.
+We'll incorporate token streaming into a simple chat app. Start by following the [Flask documentation](https://flask.palletsprojects.com/en/stable/installation/) to set up a new project. Then, create routes for a static page and form handler:
 
 ```python
 # app.py
@@ -70,7 +70,7 @@ Start the server using `flask run` and visit the site at the logged URL (e.g., `
 
 ## Plain text streaming
 
-To implement basic text streaming, start by updating the `/chat` handler.
+To implement basic text streaming, start by updating the `/chat` handler:
 
 ```python
 @app.post("/chat")
@@ -136,7 +136,7 @@ The handler streams generated tokens to the client, wrapping each one with `serv
 
 ## HTML streaming
 
-To generate HTML instead of plain text, we can modify the prompt.
+To generate HTML instead of plain text, we can modify the prompt:
 
 ```python
 prompt = "Answer the query in only HTML in a <div> fragment (never use full <html> or backticks)"
@@ -148,7 +148,7 @@ However, the output will unfortunately appear malformed.
 
 The incomplete HTML tags aren't being correctly interpreted, even after subsequent tokens complete the element. A simple solution involves buffering the HTML client-side and re-rendering from the buffer, rather than appending directly to the DOM.
 
-The updated server code disables `hx-swap` and adds improved newline handling for HTML.
+The updated server code disables `hx-swap` and adds improved newline handling for HTML:
 
 ```python
 @app.post("/chat")
@@ -190,7 +190,7 @@ def stream():
 
 ```
 
-JavaScript listeners can hook into htmx events to manually update the target element.
+JavaScript listeners hook into htmx events to update the buffer and target element:
 
 ```html
 <script>
