@@ -4,7 +4,7 @@ import type { Post } from "../types";
 
 const posts = Object.values(
     import.meta.glob<Post>("../pages/posts/*.mdx", { eager: true })
-);
+).sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date)); // Sort by descending date
 ---
 
 <div>

@@ -13,7 +13,7 @@ For technically-minded users, [Hammerspoon](https://www.hammerspoon.org) is a gr
 There are plenty of online resources that explain how to use Hammerspoon for this purpose; however, most rely on additional software, such as [Karabiner-Elements](https://karabiner-elements.pqrs.org) or [Hyperkey](https://hyperkey.app), to map the physical hyper key itself. I've found that Hammerspoon can handle this step entirely on its own with just a few lines of code:
 
 ```lua
--- File: ~/.hammerspoon/init.lua
+-- ~/.hammerspoon/init.lua
 
 -- Bit masks for remapped modifier key and hyper key modifiers
 local flagMasks = hs.eventtap.event.rawFlagMasks

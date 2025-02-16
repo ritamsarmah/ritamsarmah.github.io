@@ -70,3 +70,31 @@ article pre {
     padding: 1rem;
     background-color: var(--color-zinc-800) !important;
 }
+
+article blockquote {
+    font-style: italic;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-zinc-400);
+}
+
+article code:not(pre code),
+article kbd {
+    padding: 0.125rem 0.275rem;
+    margin-block: -0.125rem;
+    background-color: var(--color-zinc-200);
+}
+
+@media (prefers-color-scheme: dark) {
+    article code:not(pre code),
+    article kbd {
+        background-color: var(--color-zinc-800);
+    }
+}
+
+.footnotes {
+    border-top: 1px solid var(--color-gray-400);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.75rem;
+}
