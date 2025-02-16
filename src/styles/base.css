@@ -20,8 +20,15 @@ kbd {
 }
 
 ul {
-    list-style-type: disc; /* This sets the bullet type to a filled circle */
-    padding-left: 1.5rem; /* Adjust the left padding for the bullets */
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -93,8 +100,5 @@ article kbd {
 }
 
 .footnotes {
-    border-top: 1px solid var(--color-gray-400);
-    margin-top: 2rem;
-    padding-top: 1rem;
     font-size: 0.75rem;
 }
