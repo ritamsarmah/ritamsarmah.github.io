@@ -130,7 +130,7 @@ def server_sent_event(event: str, data: str) -> str:
 
 ```
 
-The handler streams generated tokens to the client, wrapping each one with `server_sent_event()` to comply with the SSE specification[^2]. Server-sent events must end with `\n\n`, so newlines outputted by the model are replaced with `<br>` to prevent message truncation. Once all tokens are sent, a `close` message ends the stream.
+The handler streams generated tokens to the client, wrapping each one with `server_sent_event()` according to the SSE specification[^2]. Server-sent events must end with `\n\n`, so newlines outputted by the model are replaced with `<br>` to prevent message truncation. Once all tokens are sent, a `close` message ends the stream.
 
 ![](../../assets/posts/htmx-token-streaming-02.png)
 
@@ -190,7 +190,7 @@ def stream():
 
 ```
 
-JavaScript listeners hook into htmx events to update the buffer and target element:
+Add JavaScript listeners to hook into htmx events for updating the buffer and target element:
 
 ```html
 <script>
