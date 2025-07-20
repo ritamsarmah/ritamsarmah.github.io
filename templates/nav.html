@@ -1,0 +1,80 @@
+<nav>
+  <style>
+    me {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+
+      & a {
+        font-weight: normal;
+        color: var(--color-text);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--color-accent);
+          text-decoration: none;
+        }
+      }
+    }
+  </style>
+
+  <a href="/projects/${project}/">
+    <style>
+      me {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        & span {
+          font-weight: 600;
+        }
+      }
+    </style>
+    <img
+      src="/static/images/${project}/icon.png"
+      alt="${site_name}"
+      width="24"
+      height="24"
+    >
+    <span>${site_name}</span>
+  </a>
+
+  <div>
+    <!-- Mobile Toggle -->
+    <button
+      id="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+    >
+      <style>
+        me {
+          display: block;
+
+          @media md {
+            display: none;
+          }
+        }
+      </style>
+      <script>
+        me().on("click", (ev) => {
+        console.log("up");
+      });
+      </script>
+    </button>
+
+    <!-- Links -->
+    <div id="nav-links">
+      <style>
+        me {
+          display: flex;
+          gap: 2rem;
+        }
+      </style>
+      <a href="/projects/${project}/">Home</a>
+      <a href="/projects/${project}/faq">FAQ</a>
+      <a href="/projects/${project}/privacy">Privacy</a>
+      <a href="javascript:mail();">Support</a>
+    </div>
+  </div>
+</nav>

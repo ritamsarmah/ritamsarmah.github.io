@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ${head()}
+  </head>
+  <body>
+    ${nav()} ${body}
+
+    <footer>
+      <style>
+        me {
+          color: var(--color-secondary);
+          font-size: var(--text-sm);
+          text-align: center;
+          line-height: var(--text-sm--line-height);
+          margin-top: 4rem;
+
+          & a {
+            color: var(--color-secondary);
+          }
+        }
+      </style>
+      © 2025 <a href="/">${author}</a>
+    </footer>
+  </body>
+</html>
