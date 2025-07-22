@@ -6,7 +6,7 @@ declare -A project_names
 project_names["accelerate"]="Accelerate"
 
 input_dir="content"
-output_dir="output"
+output_dir="dist"
 
 # -- Functions -- #
 
