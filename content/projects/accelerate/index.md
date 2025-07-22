@@ -8,19 +8,10 @@ title: Home
 
 Accelerate is a Safari extension with powerful, customizable features for controlling video playback.
 
-![](/images/accelerate/screenshot.png){
-  width=100%
-  alt="Screenshot of Accelerate on an iPad and iPhone"
-}
+![](/images/accelerate/screenshot.png){ width=100% alt="Screenshot of Accelerate on an iPad and iPhone" }
 
-[![](/images/macappstore-black.svg){
-  .download
-  alt="Download on the Mac App Store"
-}](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=12)
-[![](/images/appstore-black.svg){
-  .download
-  alt="Download on the App Store"
-}](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8)
+[![](/images/macappstore-black.svg){ .download alt="Download on the Mac App Store" }](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=12)
+[![](/images/appstore-black.svg){ .download alt="Download on the App Store" }](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8)
 
 <div id="info">
 Free and [open source](https://github.com/ritamsarmah/accelerate)
