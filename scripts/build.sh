@@ -29,7 +29,7 @@ slugify() {
 }
 
 build() {
-  cp -r static output/static
+  cp -r static output/static 2>/dev/null
 
   # Default
 
@@ -84,6 +84,8 @@ build() {
   done
 }
 
+echo -e "\n*** Build ***\n"
+
 rm -rf "$output_dir"
-mkdir "$output_dir"
+mkdir -p "$output_dir"
 build
