@@ -29,7 +29,7 @@ slugify() {
 }
 
 build() {
-  cp -r static output/static 2>/dev/null
+  cp -r static/* output 2>/dev/null
 
   # Default
 

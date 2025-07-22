@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+       Privacy | Accelerate 
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Privacy policy for Accelerate." />
+    <meta property="og:site_name" content="Accelerate" />
+    <meta property="og:title" content="Privacy" />
+    <meta property="og:url" content="https://ritam.me/projects/accelerate/privacy/" />
+    <meta property="og:description" content="Privacy policy for
+    Accelerate." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
+    >
+    <link rel="stylesheet" href="/css/accelerate.css">
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/gnat/surreal@main/surreal.js"></script>
+    <script defer src="/js/script.js"></script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "8717da2f22044f86b25e1ff54c888434"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->  </head>
+  <body>
+    <nav>
+  <style>
+    me {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+
+      & a {
+        font-weight: normal;
+        color: var(--color-text);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--color-accent);
+          text-decoration: none;
+        }
+      }
+    }
+  </style>
+
+  <a href="/projects/accelerate/">
+    <style>
+      me {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        & span {
+          font-weight: 600;
+        }
+      }
+    </style>
+    <img
+      src="/images/accelerate/icon.png"
+      alt="Accelerate"
+      width="24"
+      height="24"
+    >
+    <span>Accelerate</span>
+  </a>
+
+  <div>
+    <!-- Mobile Toggle -->
+    <button
+      id="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+    >
+      <style>
+        me {
+          display: block;
+
+          @media md {
+            display: none;
+          }
+        }
+      </style>
+      <script>
+        me().on("click", (ev) => {
+        console.log("up");
+      });
+      </script>
+    </button>
+
+    <!-- Links -->
+    <div id="nav-links">
+      <style>
+        me {
+          display: flex;
+          gap: 2rem;
+        }
+      </style>
+      <a href="/projects/accelerate/">Home</a>
+      <a href="/projects/accelerate/faq">FAQ</a>
+      <a href="/projects/accelerate/privacy">Privacy</a>
+      <a href="javascript:mail();">Support</a>
+    </div>
+  </div>
+</nav> <h1 id="privacy-policy">Privacy Policy</h1>
+<h2 id="does-accelerate-collect-any-of-my-data">Does Accelerate collect
+any of my data?</h2>
+<p>Accelerate never collects any personal data or identifiable
+information from you.</p>
+<h2
+id="why-does-safari-warn-me-that-accelerate-can-read-sensitive-info-from-all-webpages">Why
+does Safari warn me that Accelerate can read sensitive info from all
+webpages?</h2>
+<p>Safari shows this general warning for extensions that load JavaScript
+into all web pages, which includes most Safari extensions on the App
+Store. In the case of Accelerate, the extension runs code that finds
+videos on each page you visit, and adds your playback options to control
+them. Apple rightfully cautions the user in case a malicious extension
+tries to abuse this permission; however, <strong>Accelerate never
+attempts to read any sensitive info</strong> from a webpage, and does
+not need to collect any data to function. If you’re interested in
+learning more about privacy with Safari extensions, I recommend checking
+out this excellent <a
+href="https://lapcatsoftware.com/articles/security-safari-extensions.html">blog
+post</a>.</p>
+<h2 id="what-if-i-have-more-questions-about-privacy">What if I have more
+questions about privacy?</h2>
+<p>If you have any additional questions about Accelerate and its privacy
+policy, feel free to contact the developer via email.</p>
+
+    <footer>
+      <style>
+        me {
+          color: var(--color-secondary);
+          font-size: var(--text-sm);
+          text-align: center;
+          line-height: var(--text-sm--line-height);
+          margin-top: 4rem;
+
+          & a {
+            color: var(--color-secondary);
+          }
+        }
+      </style>
+      © 2025 <a href="/">Ritam Sarmah</a>
+    </footer>
+  </body>
+</html>
