@@ -4,7 +4,7 @@ description: Software engineer based in San Francisco.
 
 # Hello! I'm Ritam.
 
-I am a software engineer based in San Francisco, currently working at AppLovin. In my spare time, I enjoy building useful apps and creative projects. I graduated from UCLA, where I studied computer science and pursued research in [human-computer interaction](https://hci.ucla.edu/).
+I am a software engineer based in San Francisco, currently at AppLovin. In my spare time, I enjoy building useful apps and working on creative projects. I graduated from UCLA, where I studied computer science and pursued research in [human-computer interaction](https://hci.ucla.edu/).
 
 Feel free to reach out if you have any questions or just want to say hello.
 
