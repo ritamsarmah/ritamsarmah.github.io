@@ -6,7 +6,7 @@ declare -A project_names
 project_names["accelerate"]="Accelerate"
 
 input_dir="content"
-output_dir="docs" # To support GitHub pages
+output_dir="output"
 
 # -- Functions -- #
 
