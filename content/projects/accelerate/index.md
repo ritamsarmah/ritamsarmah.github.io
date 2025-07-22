@@ -22,7 +22,7 @@ Accelerate is a Safari extension with powerful, customizable features for contro
   alt="Download on the App Store"
 }](https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8)
 
-<div id="compatibility">
+<div id="info">
 Free and [open source](https://github.com/ritamsarmah/accelerate)
 <br>
 Supports macOS 11+ and iOS 15+

@@ -52,7 +52,7 @@ strong {
   line-height: var(--text-xl--line-height);
 }
 
-#compatibility p {
+#info p {
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
 }
