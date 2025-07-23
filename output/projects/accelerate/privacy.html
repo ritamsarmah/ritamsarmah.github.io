@@ -30,7 +30,6 @@
     <script
       src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/gh/gnat/surreal@main/surreal.js"></script>
     <script defer src="/js/script.js"></script>
 
     <!-- Cloudflare Web Analytics -->
@@ -42,109 +41,137 @@
     <!-- End Cloudflare Web Analytics -->  </head>
   <body>
     <nav>
-  <style>
-    me {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-
-      & a {
-        font-weight: normal;
-        color: var(--color-text);
-        text-decoration: none;
-
-        &:hover {
-          color: var(--color-accent);
-          text-decoration: none;
-        }
-      }
-    }
-  </style>
-
-  <a href="/projects/accelerate/">
-    <style>
-      me {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-
-        & span {
-          font-weight: 600;
-        }
-      }
-    </style>
-    <img
-      src="/images/accelerate/icon.png"
-      alt="Accelerate"
-      width="24"
-      height="24"
-    >
-    <span>Accelerate</span>
-  </a>
-
-  <div>
-    <!-- Mobile Toggle -->
-    <button
-      id="nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="nav-mobile"
-    >
-      <style>
-        me {
-          display: block;
-
-          @media md {
-            display: none;
-          }
-        }
-      </style>
-      <script>
-        me().on("click", (ev) => {
-        console.log("up");
-      });
-      </script>
-    </button>
-
-    <!-- Links -->
-    <div id="nav-links">
       <style>
         me {
           display: flex;
-          gap: 2rem;
+          justify-content: space-between;
+          margin-bottom: 3rem;
+
+          & a {
+            font-weight: normal;
+            color: var(--color-text);
+            text-decoration: none;
+
+            &:hover {
+              color: var(--color-accent);
+              text-decoration: none;
+            }
+          }
         }
       </style>
-      <a href="/projects/accelerate/">Home</a>
-      <a href="/projects/accelerate/faq">FAQ</a>
-      <a href="/projects/accelerate/privacy">Privacy</a>
-      <a href="javascript:mail();">Support</a>
+
+      <a href="/projects/accelerate/">
+        <style>
+          me {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            & span {
+              font-weight: 600;
+            }
+          }
+        </style>
+        <img
+          src="/images/accelerate/icon.png"
+          alt="Accelerate"
+          width="24"
+          height="24"
+        >
+        <span>Accelerate</span>
+      </a>
+
+      <!-- Compact -->
+      <details>
+        <style>
+          @media sm {
+            me {
+              display: none;
+            }
+          }
+        </style>
+        <summary>
+          <img src="/images/bars.svg" width="24" height="24">
+        </summary>
+        <div>
+          <style>
+            me {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              gap: 1rem;
+              width: auto;
+              padding: 1rem 2rem;
+
+              position: absolute;
+              right: 32px;
+              z-index: 1;
+              background-color: white;
+              border-radius: var(--rounded);
+              border: 1px solid var(--color-zinc-200);
+            }
+          </style>
+          <a href="/projects/accelerate/">Home</a>
+          <a href="/projects/accelerate/faq">FAQ</a>
+          <a href="/projects/accelerate/privacy">Privacy</a>
+          <a href="javascript:mail();">Support</a>
+        </div>
+      </details>
+
+      <!-- Widescreen -->
+      <div>
+        <style>
+          me {
+            display: none;
+          }
+
+          @media sm {
+            me {
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+            }
+          }
+        </style>
+
+        <a href="/projects/accelerate/">Home</a>
+        <a href="/projects/accelerate/faq">FAQ</a>
+        <a href="/projects/accelerate/privacy">Privacy</a>
+        <a href="javascript:mail();">Support</a>
+      </div>
+    </nav>    <div>
+      <style>
+        me {
+          margin-top: 3rem;
+        }
+      </style>
+      <h1 id="privacy-policy">Privacy Policy</h1>
+      <h2 id="does-accelerate-collect-any-of-my-data">Does Accelerate
+      collect any of my data?</h2>
+      <p>Accelerate never collects any personal data or identifiable
+      information from you.</p>
+      <h2
+      id="why-does-safari-warn-me-that-accelerate-can-read-sensitive-info-from-all-webpages">Why
+      does Safari warn me that Accelerate can read sensitive info from
+      all webpages?</h2>
+      <p>Safari shows this general warning for extensions that load
+      JavaScript into all web pages, which includes most Safari
+      extensions on the App Store. In the case of Accelerate, the
+      extension runs code that finds videos on each page you visit, and
+      adds your playback options to control them. Apple rightfully
+      cautions the user in case a malicious extension tries to abuse
+      this permission; however, <strong>Accelerate never attempts to
+      read any sensitive info</strong> from a webpage, and does not need
+      to collect any data to function. If you’re interested in learning
+      more about privacy with Safari extensions, I recommend checking
+      out this excellent <a
+      href="https://lapcatsoftware.com/articles/security-safari-extensions.html">blog
+      post</a>.</p>
+      <h2 id="what-if-i-have-more-questions-about-privacy">What if I
+      have more questions about privacy?</h2>
+      <p>If you have any additional questions about Accelerate and its
+      privacy policy, feel free to contact the developer via email.</p>
     </div>
-  </div>
-</nav> <h1 id="privacy-policy">Privacy Policy</h1>
-<h2 id="does-accelerate-collect-any-of-my-data">Does Accelerate collect
-any of my data?</h2>
-<p>Accelerate never collects any personal data or identifiable
-information from you.</p>
-<h2
-id="why-does-safari-warn-me-that-accelerate-can-read-sensitive-info-from-all-webpages">Why
-does Safari warn me that Accelerate can read sensitive info from all
-webpages?</h2>
-<p>Safari shows this general warning for extensions that load JavaScript
-into all web pages, which includes most Safari extensions on the App
-Store. In the case of Accelerate, the extension runs code that finds
-videos on each page you visit, and adds your playback options to control
-them. Apple rightfully cautions the user in case a malicious extension
-tries to abuse this permission; however, <strong>Accelerate never
-attempts to read any sensitive info</strong> from a webpage, and does
-not need to collect any data to function. If you’re interested in
-learning more about privacy with Safari extensions, I recommend checking
-out this excellent <a
-href="https://lapcatsoftware.com/articles/security-safari-extensions.html">blog
-post</a>.</p>
-<h2 id="what-if-i-have-more-questions-about-privacy">What if I have more
-questions about privacy?</h2>
-<p>If you have any additional questions about Accelerate and its privacy
-policy, feel free to contact the developer via email.</p>
 
     <footer>
       <style>

@@ -28,7 +28,6 @@
     <script
       src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/gh/gnat/surreal@main/surreal.js"></script>
     <script defer src="/js/script.js"></script>
 
     <!-- Cloudflare Web Analytics -->
@@ -40,114 +39,143 @@
     <!-- End Cloudflare Web Analytics -->  </head>
   <body>
     <nav>
-  <style>
-    me {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-
-      & a {
-        font-weight: normal;
-        color: var(--color-text);
-        text-decoration: none;
-
-        &:hover {
-          color: var(--color-accent);
-          text-decoration: none;
-        }
-      }
-    }
-  </style>
-
-  <a href="/projects/accelerate/">
-    <style>
-      me {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-
-        & span {
-          font-weight: 600;
-        }
-      }
-    </style>
-    <img
-      src="/images/accelerate/icon.png"
-      alt="Accelerate"
-      width="24"
-      height="24"
-    >
-    <span>Accelerate</span>
-  </a>
-
-  <div>
-    <!-- Mobile Toggle -->
-    <button
-      id="nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="nav-mobile"
-    >
-      <style>
-        me {
-          display: block;
-
-          @media md {
-            display: none;
-          }
-        }
-      </style>
-      <script>
-        me().on("click", (ev) => {
-        console.log("up");
-      });
-      </script>
-    </button>
-
-    <!-- Links -->
-    <div id="nav-links">
       <style>
         me {
           display: flex;
-          gap: 2rem;
+          justify-content: space-between;
+          margin-bottom: 3rem;
+
+          & a {
+            font-weight: normal;
+            color: var(--color-text);
+            text-decoration: none;
+
+            &:hover {
+              color: var(--color-accent);
+              text-decoration: none;
+            }
+          }
         }
       </style>
-      <a href="/projects/accelerate/">Home</a>
-      <a href="/projects/accelerate/faq">FAQ</a>
-      <a href="/projects/accelerate/privacy">Privacy</a>
-      <a href="javascript:mail();">Support</a>
+
+      <a href="/projects/accelerate/">
+        <style>
+          me {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            & span {
+              font-weight: 600;
+            }
+          }
+        </style>
+        <img
+          src="/images/accelerate/icon.png"
+          alt="Accelerate"
+          width="24"
+          height="24"
+        >
+        <span>Accelerate</span>
+      </a>
+
+      <!-- Compact -->
+      <details>
+        <style>
+          @media sm {
+            me {
+              display: none;
+            }
+          }
+        </style>
+        <summary>
+          <img src="/images/bars.svg" width="24" height="24">
+        </summary>
+        <div>
+          <style>
+            me {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              gap: 1rem;
+              width: auto;
+              padding: 1rem 2rem;
+
+              position: absolute;
+              right: 32px;
+              z-index: 1;
+              background-color: white;
+              border-radius: var(--rounded);
+              border: 1px solid var(--color-zinc-200);
+            }
+          </style>
+          <a href="/projects/accelerate/">Home</a>
+          <a href="/projects/accelerate/faq">FAQ</a>
+          <a href="/projects/accelerate/privacy">Privacy</a>
+          <a href="javascript:mail();">Support</a>
+        </div>
+      </details>
+
+      <!-- Widescreen -->
+      <div>
+        <style>
+          me {
+            display: none;
+          }
+
+          @media sm {
+            me {
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+            }
+          }
+        </style>
+
+        <a href="/projects/accelerate/">Home</a>
+        <a href="/projects/accelerate/faq">FAQ</a>
+        <a href="/projects/accelerate/privacy">Privacy</a>
+        <a href="javascript:mail();">Support</a>
+      </div>
+    </nav>    <div>
+      <style>
+        me {
+          margin-top: 3rem;
+        }
+      </style>
+      <div id="hero">
+      <h1 id="video-playback-controls-for-safari">Video playback
+      controls for Safari</h1>
+      <p>Accelerate is a Safari extension with powerful, customizable
+      features for controlling video playback.</p>
+      <p><img src="/images/accelerate/screenshot.png"
+      style="width:100.0%"
+      alt="Screenshot of Accelerate on an iPad and iPhone" /></p>
+      <p><a
+      href="https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=12"><img
+      src="/images/macappstore-black.svg" class="download"
+      alt="Download on the Mac App Store" /></a> <a
+      href="https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8"><img
+      src="/images/appstore-black.svg" class="download"
+      alt="Download on the App Store" /></a></p>
+      <div id="info">
+      <p>Free and <a
+      href="https://github.com/ritamsarmah/accelerate">open source</a>
+      <br> Supports macOS 11+ and iOS 15+</p>
+      </div>
+      </div>
+      <h2 id="adjust-playback-speed">Adjust playback speed</h2>
+      <p>Instantly speed up or slow down videos, allowing you to follow
+      alongside tutorials, zoom through lectures, and boost your
+      productivity.</p>
+      <h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+      <p>Create convenient shortcuts that work across your favorite
+      video websites, so you can easily control playback and toggle
+      features like Picture-in-Picture.</p>
+      <h2 id="extensive-website-support">Extensive website support</h2>
+      <p>Accelerate supports any website that uses HTML5 video,
+      including YouTube, Netflix, and more.</p>
     </div>
-  </div>
-</nav> <div id="hero">
-<h1 id="video-playback-controls-for-safari">Video playback controls for
-Safari</h1>
-<p>Accelerate is a Safari extension with powerful, customizable features
-for controlling video playback.</p>
-<p><img src="/images/accelerate/screenshot.png" style="width:100.0%"
-alt="Screenshot of Accelerate on an iPad and iPhone" /></p>
-<p><a
-href="https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=12"><img
-src="/images/macappstore-black.svg" class="download"
-alt="Download on the Mac App Store" /></a> <a
-href="https://apps.apple.com/app/accelerate-for-safari/id1459809092?mt=8"><img
-src="/images/appstore-black.svg" class="download"
-alt="Download on the App Store" /></a></p>
-<div id="info">
-<p>Free and <a href="https://github.com/ritamsarmah/accelerate">open
-source</a> <br> Supports macOS 11+ and iOS 15+</p>
-</div>
-</div>
-<h2 id="adjust-playback-speed">Adjust playback speed</h2>
-<p>Instantly speed up or slow down videos, allowing you to follow
-alongside tutorials, zoom through lectures, and boost your
-productivity.</p>
-<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
-<p>Create convenient shortcuts that work across your favorite video
-websites, so you can easily control playback and toggle features like
-Picture-in-Picture.</p>
-<h2 id="extensive-website-support">Extensive website support</h2>
-<p>Accelerate supports any website that uses HTML5 video, including
-YouTube, Netflix, and more.</p>
 
     <footer>
       <style>
