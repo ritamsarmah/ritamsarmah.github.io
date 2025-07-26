@@ -16,4 +16,4 @@ fd . --exclude output | entr ./scripts/build.sh &
 sleep 1
 
 # Start server
-deno run --allow-all npm:serve output
+serve output

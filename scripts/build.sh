@@ -84,8 +84,10 @@ build() {
   done
 }
 
-echo -e "\n*** Build ***\n"
+echo -e "\n*** Build Started ***\n"
 
 rm -rf "$output_dir"
 mkdir -p "$output_dir"
 build
+
+echo -e "\n*** Build Complete ***\n"
