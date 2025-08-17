@@ -3,11 +3,11 @@
 output_dir := output
 
 build:
-	./scripts/build.sh
+	./scripts/build
 
 develop:
-	./scripts/develop.sh
-
+	./scripts/develop
+	
 clean:
 	rm -rf $(output_dir)
 	mkdir -p $(output_dir)

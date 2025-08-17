@@ -10,7 +10,9 @@ cleanup() {
 trap cleanup EXIT
 
 # Start hot reload in background
-fd . --exclude output | entr ./scripts/build.sh &
+fswatch -o content | while read; do
+  ./scripts/build
+done &
 
 # Delay to finish build
 sleep 1
