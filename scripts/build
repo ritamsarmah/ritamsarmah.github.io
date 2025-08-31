@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # -- Globals -- #
 
 declare -A project_names
@@ -53,17 +55,20 @@ build_page() {
   pandoc "$page" \
     --standalone \
     --template "$template" \
+    --metadata "site:https://ritam.me" \
+    --metadata "author:Ritam Sarmah" \
     --metadata "slug:$slug" \
     --metadata "site_name:$site_name" \
     --metadata "stylesheet:$stylesheet" \
     $extra_metadata \
-    --metadata-file site.yaml \
     --output "$output_path"
 }
 
 build_site() {
+  cd src
+
   # Static
-for path in $(fd "" static --type file); do
+  for path in $(fd "" static --type file); do
     output_path="$output_dir/${path#static/}"
     mkdir -p "$(dirname "$output_path")"
 
@@ -73,7 +78,7 @@ for path in $(fd "" static --type file); do
     fi
 
     output_paths["$output_path"]=1
-done
+  done
 
   # Default
   local pages=$(fd . "$input_dir" --maxdepth 1 --extension md)
@@ -105,5 +110,8 @@ done
   done
 }
 
+# -- Main -- #
+
 mkdir -p "$output_dir"
+output_dir=$(realpath "$output_dir")
 build_site

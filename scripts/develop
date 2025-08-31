@@ -12,7 +12,7 @@ trap cleanup EXIT
 ./scripts/build
 
 # Start hot reload in background
-fswatch --one-per-batch content static templates | while read; do
+fswatch --one-per-batch src | while read; do
   ./scripts/build
 done &
 
