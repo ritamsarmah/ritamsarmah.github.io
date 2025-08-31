@@ -1,4 +1,4 @@
-.PHONY: build develop clean
+.PHONY: *
 
 output_dir := output
 
@@ -10,4 +10,3 @@ develop:
 	
 clean:
 	rm -rf $(output_dir)
-	mkdir -p $(output_dir)
