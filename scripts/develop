@@ -16,8 +16,5 @@ fswatch --one-per-batch src | while read; do
   ./scripts/build
 done &
 
-# Delay to finish build
-sleep 1
-
 # Start server
 serve output
