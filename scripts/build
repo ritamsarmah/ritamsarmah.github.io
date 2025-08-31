@@ -4,23 +4,17 @@ set -e
 
 # -- Globals -- #
 
-declare -A project_names
-project_names["accelerate"]="Accelerate"
-
-input_dir="content"
+static_dir="static"
+content_dir="content"
 output_dir="output"
 
 declare -A output_paths
 
 # -- Functions -- #
 
-create_output_path() {
-  echo "${output_dir}/${1#$input_dir/}" | sed 's/\.md$/.html/'
-}
-
 slugify() {
-  local page="${1#$input_dir/}"  # Remove input dir prefix
-  page="${page%.*}"              # Remove extension
+  local page="${1#$content_dir/}"  # Remove input dir prefix
+  page="${page%.*}"                # Remove extension
 
   if [[ "$page" == "index" ]]; then
     echo "/"
@@ -31,17 +25,17 @@ slugify() {
   fi
 }
 
+# Creates HTML page from Markdown file in output directory
 build_page() {
   local page="$1"
   local template="$2"
-  local site_name="$3"
-  local stylesheet="$4"
-  local extra_metadata="$5"
+  local root="$3"
 
-  local output_path=$(create_output_path "$page")
   local slug=$(slugify "$page")
 
-  output_paths["$output_path"]=1  # mark as expected
+  local output_path="${output_dir}/${page#$content_dir/}"
+  output_path="${output_path%.md}.html"
+  output_paths["$output_path"]=1
 
   # Skip if output is newer than source
   if [[ -f "$output_path" && "$output_path" -nt "$page" ]]; then
@@ -54,22 +48,18 @@ build_page() {
 
   pandoc "$page" \
     --standalone \
-    --template "$template" \
+    --template "templates/$template.html" \
     --metadata "site:https://ritam.me" \
     --metadata "author:Ritam Sarmah" \
     --metadata "slug:$slug" \
-    --metadata "site_name:$site_name" \
-    --metadata "stylesheet:$stylesheet" \
-    $extra_metadata \
+    --metadata-file "${root%/}/metadata.yaml" \
     --output "$output_path"
 }
 
 build_site() {
-  cd src
-
   # Static
-  for path in $(fd "" static --type file); do
-    output_path="$output_dir/${path#static/}"
+  for path in $(fd "" "$static_dir" --type file); do
+    output_path="${output_dir}/${path#${static_dir}/}"
     mkdir -p "$(dirname "$output_path")"
 
     if [ ! -f "$output_path" ] || [ "$path" -nt "$output_path" ]; then
@@ -81,23 +71,18 @@ build_site() {
   done
 
   # Default
-  local pages=$(fd . "$input_dir" --maxdepth 1 --extension md)
+  local pages=$(fd . "$content_dir" --maxdepth 1 --extension md)
   for page in $pages; do
-    build_page "$page" "templates/default.html" "Ritam Sarmah" "default" ""
+    build_page "$page" "default" "$content_dir"
   done
 
   # Projects
-  local paths=$(fd . "$input_dir/projects" --maxdepth 1 --type directory)
-  for path in $paths; do
-    local project=$(basename "$path")
-    local pages=$(fd . "$path" --extension md)
+  local projects=$(fd . "$content_dir/projects" --maxdepth 1 --type directory)
+  for project in $projects; do
+    local pages=$(fd . "$project" --extension md)
 
     for page in $pages; do
-      build_page "$page" \
-        "templates/project.html" \
-        "${project_names[$project]}" \
-        "$project" \
-        "--metadata project:$project"
+      build_page "$page" "project" "$project"
     done
   done
 
@@ -114,4 +99,5 @@ build_site() {
 
 mkdir -p "$output_dir"
 output_dir=$(realpath "$output_dir")
+cd src
 build_site
