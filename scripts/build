@@ -8,16 +8,17 @@ project_names["accelerate"]="Accelerate"
 input_dir="content"
 output_dir="output"
 
+declare -A output_paths
+
 # -- Functions -- #
 
 create_output_path() {
-  # Replace input dir and extension
-  echo "$output_dir/$(echo "$1" | sed -e "s/^$input_dir\///" -e 's/\.md$/.html/')"
+  echo "${output_dir}/${1#$input_dir/}" | sed 's/\.md$/.html/'
 }
 
 slugify() {
-  # Remove input dir and extension
-  local page=$(echo "$1" | sed -e "s/^$input_dir\///" -e 's/\.[^.]*$//')
+  local page="${1#$input_dir/}"  # Remove input dir prefix
+  page="${page%.*}"              # Remove extension
 
   if [[ "$page" == "index" ]]; then
     echo "/"
@@ -28,66 +29,81 @@ slugify() {
   fi
 }
 
-build() {
-  cp -r static/* output 2>/dev/null
+build_page() {
+  local page="$1"
+  local template="$2"
+  local site_name="$3"
+  local stylesheet="$4"
+  local extra_metadata="$5"
+
+  local output_path=$(create_output_path "$page")
+  local slug=$(slugify "$page")
+
+  output_paths["$output_path"]=1  # mark as expected
+
+  # Skip if output is newer than source
+  if [[ -f "$output_path" && "$output_path" -nt "$page" ]]; then
+    return
+  else
+    echo "[build] $slug"
+  fi
+
+  mkdir -p "$(dirname "$output_path")"
+
+  pandoc "$page" \
+    --standalone \
+    --template "$template" \
+    --metadata "slug:$slug" \
+    --metadata "site_name:$site_name" \
+    --metadata "stylesheet:$stylesheet" \
+    $extra_metadata \
+    --metadata-file site.yaml \
+    --output "$output_path"
+}
+
+build_site() {
+  # Static
+for path in $(fd "" static --type file); do
+    output_path="$output_dir/${path#static/}"
+    mkdir -p "$(dirname "$output_path")"
+
+    if [ ! -f "$output_path" ] || [ "$path" -nt "$output_path" ]; then
+        cp "$path" "$output_path"
+        echo "[copy] $path"
+    fi
+
+    output_paths["$output_path"]=1
+done
 
   # Default
-
-  echo -e "[default]"
-
-  local pages=$(fd . $input_dir --maxdepth 1 --extension md)
-
+  local pages=$(fd . "$input_dir" --maxdepth 1 --extension md)
   for page in $pages; do
-    local output_path=$(create_output_path $page)
-    local slug=$(slugify $page)
-
-    echo $slug
-
-    pandoc "$page" \
-      --standalone \
-      --template templates/default.html \
-      --metadata "slug:$slug" \
-      --metadata "site_name:Ritam Sarmah" \
-      --metadata "stylesheet:default" \
-      --metadata-file site.yaml \
-      --output "$output_path"
+    build_page "$page" "templates/default.html" "Ritam Sarmah" "default" ""
   done
 
   # Projects
-
-  local paths=$(fd . $input_dir/projects --maxdepth 1 --type directory)
-
+  local paths=$(fd . "$input_dir/projects" --maxdepth 1 --type directory)
   for path in $paths; do
-    local project=$(basename $path)
+    local project=$(basename "$path")
     local pages=$(fd . "$path" --extension md)
-    local index="${path#*/}"
-
-    echo -e "\n[$project]"
 
     for page in $pages; do
-      local output_path=$(create_output_path $page)
-      local slug=$(slugify $page)
-
-      echo $slug
-      mkdir -p `dirname $output_path`
-
-      pandoc "$page" \
-        --standalone \
-        --template "templates/project.html" \
-        --metadata "project:$project" \
-        --metadata "slug:$slug" \
-        --metadata "site_name:${project_names[$project]}" \
-        --metadata "stylesheet:$project" \
-        --metadata-file site.yaml \
-        --output "$output_path"
+      build_page "$page" \
+        "templates/project.html" \
+        "${project_names[$project]}" \
+        "$project" \
+        "--metadata project:$project"
     done
+  done
+
+  # Delete outdated files in output
+  fd --no-ignore --type file "" "$output_dir" | while read -r path; do
+    if [[ -z "${output_paths[$path]+_}" ]]; then
+      echo "[remove] $path"
+      rm -f "$path"
+    fi
   done
 }
 
-echo -e "\n*** Build Started ***\n"
-
-rm -rf "$output_dir"
 mkdir -p "$output_dir"
-build
-
-echo -e "\n*** Build Complete ***\n"
+build_site

@@ -4,13 +4,15 @@
 set -e
 
 cleanup() {
-  echo "Cleaning up..."
   pkill -P $$
 }
 trap cleanup EXIT
 
+# Run initial build
+./scripts/build
+
 # Start hot reload in background
-fswatch -o content | while read; do
+fswatch --one-per-batch content static templates | while read; do
   ./scripts/build
 done &
 
