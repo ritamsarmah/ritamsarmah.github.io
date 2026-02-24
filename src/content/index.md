@@ -11,6 +11,7 @@ Feel free to reach out if you have any questions or just want to say hello.
 [Email](javascript:mail();){.link}
 [GitHub](https://github.com/ritamsarmah){.link}
 [LinkedIn](https://www.linkedin.com/in/rsarmah/){.link}
+[Tips](https://buy.stripe.com/6oU8wRgm17lAawD4ku5Rm00){.link}
 
 ## Projects
 
