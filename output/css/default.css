@@ -64,7 +64,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
   align-items: start;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   figure {
     margin: 0;
