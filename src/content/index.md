@@ -4,7 +4,7 @@ description: Software engineer based in San Francisco.
 
 # Hello! I'm Ritam.
 
-I am a software engineer based in San Francisco with a passion for building robust and intuitive projects. My creative interests include jazz piano, [charcoal art](#artwork) and west coast swing. I graduated from UCLA, where I studied computer science and pursued research in [human-computer interaction](https://hci.ucla.edu/). Previously at AppLovin.
+I am a developer based in San Francisco with a passion for intentional, reliable software. My creative interests include jazz piano, [charcoal art](#artwork) and west coast swing. I graduated from UCLA, where I studied computer science and pursued research in [human-computer interaction](https://hci.ucla.edu/). I previously worked at AppLovin as a staff software engineer.
 
 Feel free to reach out if you have any questions or just want to say hello.
 
