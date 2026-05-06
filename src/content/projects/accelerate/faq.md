@@ -3,21 +3,23 @@ title: FAQ
 description: Answers to common questions about Accelerate.
 ---
 
-<div id="hero">
+::: {#hero}
 
 # FAQ
 
 Answers to common questions about Accelerate
 
-</div>
+:::
 
-<div id="faq-select">
-   <input type="radio" id="radio-mac" name="faq" value="mac">
-   <label for="radio-mac">macOS</label>
+::: {#faq-select}
 
-   <input type="radio" id="radio-ios" name="faq" value="ios">
-   <label for="radio-ios">iOS</label>
-</div>
+<input type="radio" id="radio-mac" name="faq" value="mac">
+<label for="radio-mac">macOS</label>
+
+<input type="radio" id="radio-ios" name="faq" value="ios">
+<label for="radio-ios">iOS</label>
+
+:::
 
 <script>
    document.addEventListener("DOMContentLoaded", () => {
@@ -54,7 +56,7 @@ Answers to common questions about Accelerate
    });
 </script>
 
-<div id="mac" class="faq">
+::: {#mac .faq}
 
 ## Getting Started
 
@@ -201,9 +203,9 @@ Please share bug reports or feature requests [on GitHub](https://github.com/rita
 
 </details class="accordion">
 
-</div>
+:::
 
-<div id="ios" class="faq">
+::: {#ios .faq}
  
 ## Getting Started
 
@@ -313,4 +315,4 @@ Please share bug reports or feature requests [on GitHub](https://github.com/rita
 
 </details class="accordion">
 
-</div>
+:::
