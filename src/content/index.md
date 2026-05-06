@@ -4,14 +4,13 @@ description: Software engineer based in San Francisco.
 
 # Hello! I'm Ritam.
 
-I am a software engineer based in San Francisco with a passion for building useful apps and creative projects. I graduated from UCLA, where I studied computer science and pursued research in [human-computer interaction](https://hci.ucla.edu/). Previously at AppLovin.
+I am a software engineer based in San Francisco with a passion for building robust and intuitive projects. My creative interests include jazz piano, [charcoal art](#artwork) and west coast swing. I graduated from UCLA, where I studied computer science and pursued research in [human-computer interaction](https://hci.ucla.edu/). Previously at AppLovin.
 
 Feel free to reach out if you have any questions or just want to say hello.
 
 [Email](javascript:mail();){.link}
 [GitHub](https://github.com/ritamsarmah){.link}
 [LinkedIn](https://www.linkedin.com/in/rsarmah/){.link}
-[Tips](https://buy.stripe.com/6oU8wRgm17lAawD4ku5Rm00){.link}
 
 ## Projects
 
@@ -35,3 +34,19 @@ Developer tool for adding multimodal interfaces into existing web apps. Accepted
 
 [Paper](https://arxiv.org/pdf/2007.09809.pdf){.link}
 [GitHub](https://github.com/ritamsarmah/geno){.link}
+
+## Artwork
+
+::: {.gallery}
+![Panther, 2026<br>Charcoal on paper](/images/art/2026-03-28_Charcoal.jpg){loading="lazy"}
+
+![Dissipate, 2025<br>Charcoal on paper](/images/art/2025-10-05_Charcoal.jpg){loading="lazy"}
+
+![Kitten, 2025<br>Charcoal on paper](/images/art/2025-08-16_Charcoal.jpg){loading="lazy"}
+
+![Tendrils, 2025<br>Charcoal on paper](/images/art/2025-06-19_Charcoal.jpg){loading="lazy"}
+
+![Veiled, 2025<br>Charcoal on paper](/images/art/2025-04-13_Charcoal.jpg){loading="lazy"}
+
+![Portrait of woman, 2025<br>Digital painting](/images/art/2025-02-23_Digital.jpg){loading="lazy"}
+:::

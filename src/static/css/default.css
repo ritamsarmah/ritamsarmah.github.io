@@ -58,3 +58,28 @@ p {
 .link + .link {
   margin-left: 1rem;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 1rem;
+
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+
+  figcaption {
+    padding-top: 0.5rem;
+    font-size: var(--text-md);
+    line-height: var(--text-md--line-height);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
